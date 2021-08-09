@@ -28,8 +28,8 @@ app.get("/visualizer-sorting", function(req, res){
     card_title: "Black Board Implementation",
     card_title_: "Practical Implementation",
     link:"Click Here",
-    black_board: "/sorting_",
-    pratical: "/sorting"
+    black_board: "/sorting",
+    pratical: "/sorting_"
   });
 })
 
@@ -45,11 +45,11 @@ app.get("/visualizer-searching", function(req, res){
   });
 })
 
-app.get("/sorting_", function(req, res){
+app.get("/sorting", function(req, res){
   res.sendFile(__dirname + "/sorting_.html");
 })
 
-app.get("/sorting", function(req, res){
+app.get("/sorting_", function(req, res){
   res.sendFile(__dirname + "/sorting.html");
 })
 
@@ -61,6 +61,6 @@ app.get("/searching_", function(req, res){
   res.sendFile(__dirname + "/search_.html");
 })
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log("Server started on port 3000");
 })
