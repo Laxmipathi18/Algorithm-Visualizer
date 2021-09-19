@@ -18,7 +18,7 @@ app.get("/about", function(req, res){
 })
 
 app.get("/pathfinding", function(req, res){
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/pathfinding.html");
 })
 
 app.get("/visualizer-sorting", function(req, res){
