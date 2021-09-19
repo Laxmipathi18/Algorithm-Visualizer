@@ -84,7 +84,7 @@ function checkNode(row, col, curr, checker, seen, counter) {
 // Animate the nodes
 function changeColor(node, counter, cost) {
   setTimeout(() => {
-    node.style.backgroundColor = "purple";
+    node.style.backgroundColor = "#f7977a";
     if (cost) {
       node.style.backgroundColor = "blue";
       node.innerHTML = cost;
