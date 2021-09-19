@@ -23,8 +23,8 @@ function createNode(row, col, weight) {
 function createBoard() {
   var grid = document.querySelector(".container");
   grid.innerHTML = "";
-  for (var row = 0; row < 19; row++) {
-    for (var col = 0; col < 30; col++) {
+  for (var row = 0; row < 10; row++) {
+    for (var col = 0; col < 15; col++) {
       let weight = Math.floor((Math.random()*10));
       let temp = createNode(row, col, weight);
       grid.appendChild(temp);
@@ -32,7 +32,7 @@ function createBoard() {
   }
   // Set start and end node
   var startNode = document.querySelector("div[row='0'][col='0']");
-  var endNode = document.querySelector("div[row='18'][col='29']");
+  var endNode = document.querySelector("div[row='9'][col='14']");
   startNode.setAttribute("cost", 0);
   startNode.innerHTML = "S";
   endNode.innerHTML = "E";
@@ -54,7 +54,7 @@ function refresh() {
 
 // Check and update node
 function checkNode(row, col, curr, checker, seen, counter) {
-  if (row >= 0 && col >= 0 && row <= 18 && col <= 29) {
+  if (row >= 0 && col >= 0 && row <= 9 && col <= 14) {
     var node = document.querySelector(`div[row="${row}"][col="${col}"]`);
 
     var cost = Math.min(
@@ -84,8 +84,9 @@ function checkNode(row, col, curr, checker, seen, counter) {
 // Animate the nodes
 function changeColor(node, counter, cost) {
   setTimeout(() => {
-    node.style.backgroundColor = "blue";
+    node.style.backgroundColor = "purple";
     if (cost) {
+      node.style.backgroundColor = "blue";
       node.innerHTML = cost;
     }
   // }, counter * 10);
@@ -101,7 +102,7 @@ function changeColor(node, counter, cost) {
 // Start path-finding
 function start() {
   var startNode = document.querySelector("div[row='0'][col='0']");
-  var endNode = document.querySelector("div[row='18'][col='29']");
+  var endNode = document.querySelector("div[row='9'][col='14']");
   // Hide button
   var btn = document.querySelector(".start");
   var refreshBtn = document.querySelector(".refresh");

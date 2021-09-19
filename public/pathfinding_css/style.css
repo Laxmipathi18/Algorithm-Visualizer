@@ -8,8 +8,8 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(30, 30px);
-  grid-template-rows: repeat(19, 30px);
+  grid-template-columns: repeat(15, 50px);
+  grid-template-rows: repeat(10, 50px);
   /* grid-row-gap: 7px; */
   /* grid-column-gap: 7px; */
 }
